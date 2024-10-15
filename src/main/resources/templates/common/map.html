@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title th:text="${title}"></title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .map {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .area {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #888;
+            border-radius: 3px;
+            font-size: 12px;
+            top: -5px;
+            left: 15px;
+            padding: 2px;
+        }
+
+        .area {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #888;
+            border-radius: 3px;
+            font-size: 12px;
+            top: -5px;
+            left: 15px;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="map" id="map"></div>
+    </div>
+
+    <!-- 자바 스크립트 api와 파일 -->
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eb2cde2cbeff757b6cdf78846ce372ed"></script>
+    <script src="/static/js/mapjs/map.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+# http port
+server:
+  port: 5050
+
+# DB, jsp Setting
+spring:
+  application:
+    name: MapProject
+  mvc:
+    throw-exception-if-no-handler-found: true
+#    datasource:
+#      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+#      url: jdbc:log4jdbc:oracle:thin:@han-jun.kro.kr:1521:xe
+#      username: "계정은 추후 준비 할예정"
+#      password:
+  web:
+    resources:
+      add-mappings: true
+
+# query Mybatis setting
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+
+# jdbc log print Setting
+logging:
+#  file:
+#    name: C:\\applog\\log.txt
+#    append: true
+  level:
+    jdbc:
+      sqlonly: off
+      sqltiming: info
+      resultsettable: info
+      audit: off
+      resultset: off
+      connection: info
+    org.springframework.web: error
+#  logback:
+#    rollingpolicy:
+#      file-name-pattern: C:\\applog\\old\\log-%d{yyyy-MM-dd}_%i.txt
+#      max-file-size: 100MB
+#      max-history: 30
+  pattern:
+    console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr([rowNumber]: %line){red} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
+
