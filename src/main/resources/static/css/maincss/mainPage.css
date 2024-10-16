@@ -7,72 +7,72 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("/static/img/main.jpg");
+  background-image: url("/static/img/sunset-8064078_1920.jpg");
 }
 
 #header {
-    background-color: blueviolet;
-    padding-top: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
 }
 
 a {
-    color: #ffff;
-    text-decoration: none;
+  color: #ffff;
+  text-decoration: none;
 }
 
 .header_inner {
   display: flex;
-  height: 50px;
   justify-content: space-between;
 }
 
 .header_inner .nav-menu {
-    position: fixed;
-    right: -100%;
-    top: 50px;
-    flex-direction: column;
-    background-color: rgba(0,0,0, 0.5);
-    width: 30%;
-    height: 100%;
-    text-align: center;
-    transition: 750ms;
-    list-style: none;
-    padding-left: 0;
+  position: fixed;
+  right: -100%;
+  top: 70px;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  transition: 750ms;
+  list-style: none;
+  padding-left: 0;
 }
 
 .header_inner .nav-menu.active {
-    right: 0;
+  right: 0;
 }
 
 .header_inner .nav-item {
-    margin: 1em 0;
+  margin: 1em 0;
 }
 
 .header_inner .nav-link {
-    transition: 400ms ease;
+  transition: 400ms ease;
 }
 
 .header_manubar .header_hamburger {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .header_manubar .bar {
-    display: flex;
-    background-color: #fff;
-    width: 24px;
-    height: 2px;
-    margin: 6px auto;
-    transition: all 0.5s ease-in-out;
+  display: flex;
+  background-color: #fff;
+  width: 24px;
+  height: 2px;
+  margin: 6px auto;
+  transition: all 0.5s ease-in-out;
 }
 
 .header_manubar .header_hamburger.active .bar:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .header_manubar .header_hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .header_manubar .header_hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }

@@ -12,4 +12,10 @@ public class MainController {
         model.addAttribute("title", "메인 페이지");
         return "common/main";
     }
+
+    @GetMapping("/Map")
+    public String MapPage(Model model) {
+        model.addAttribute("title", "Map");
+        return "common/map";
+    }
 }

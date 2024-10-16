@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="utf-8" />
     <title th:text="${title}"></title>
@@ -36,10 +37,90 @@
             left: 15px;
             padding: 2px;
         }
+
+        .nav-menu {
+            position: fixed;
+            right: -100%;
+            top: 70px;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 20%;
+            height: 100%;
+            text-align: center;
+            transition: 750ms;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .nav-menu.active {
+            right: 0;
+        }
+
+        .nav-item {
+            margin: 1em 0;
+        }
+
+        .nav-link {
+            transition: 400ms ease;
+        }
+
+        .header_hamburger {
+            cursor: pointer;
+        }
+
+        .bar {
+            display: flex;
+            background-color: #fff;
+            width: 24px;
+            height: 2px;
+            margin: 6px auto;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .header_hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .header_hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .header_hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
     </style>
 </head>
 
 <body>
+
+    <header>
+        <div>
+            <div class="header_manubar">
+                <nav role="navigation">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">MapPage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">More</a>
+                        </li>
+                    </ul>
+
+                    <div class="header_hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
 
     <div class="container">
         <div class="map" id="map"></div>
@@ -49,4 +130,5 @@
     <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eb2cde2cbeff757b6cdf78846ce372ed"></script>
     <script src="/static/js/mapjs/map.js"></script>
 </body>
+
 </html>
