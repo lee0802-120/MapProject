@@ -1,4 +1,7 @@
 var container = document.querySelector("#map");
+const menu = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
 var options = {
     center: new kakao.maps.LatLng(36.47393942086304, 127.85943079338124),
     level: 12,
@@ -36,10 +39,6 @@ function displayArea(area) {
 	// 다각형에 mouseover 이벤트를 등록하고 이벤트가 발생하면 폴리곤의 채움색을 변경합니다
 	// 지역명을 표시하는 커스텀오버레이를 지도위에 표시합니다
 	kakao.maps.event.addListener(polygon, "mouseover", function (mouseEvent) {
-		console.log(mouseEvent);
-		console.log(area);
-		console.log(customOverlay);
-		console.log(map);
 		polygon.setOptions({ fillColor: "#09f" });
 		
 		customOverlay.setContent('<div class="area">' + area.name + "</div>");
@@ -77,9 +76,6 @@ function displayArea(area) {
 		infowindow.setMap(map);
 	});
 }
-
-const menu = document.querySelector(".header-hamburger");
-const navMenu = document.querySelector(".nav-menu");
 
 menu.addEventListener("click", () => {
     menu.classList.toggle("active");
