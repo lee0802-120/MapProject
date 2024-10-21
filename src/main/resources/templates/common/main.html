@@ -2,40 +2,163 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <title th:text="${title}"></title>
-    <link rel="stylesheet" href="/static/css/maincss/mainPage.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .map {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .area {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #888;
+            border-radius: 3px;
+            font-size: 12px;
+            top: -5px;
+            left: 15px;
+            padding: 2px;
+        }
+
+        .area {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #888;
+            border-radius: 3px;
+            font-size: 12px;
+            top: -5px;
+            left: 15px;
+            padding: 2px;
+        }
+
+        .nav-menu {
+            position: fixed;
+            left: -100%;
+            top: 0;
+            flex-direction: column;
+            z-index: 3;
+            background-color: rgba(255, 255, 255);
+            width: 20%;
+            height: 100%;
+            text-align: center;
+            transition: 500ms;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 20px;
+            left: 100px;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .tabMenu {
+            position: fixed;
+            background: rgba(255, 255, 255);
+            z-index: 2;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 70px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-item {
+            margin: 1em 0;
+        }
+
+        .nav-link {
+            transition: 400ms ease;
+        }
+
+        .hamburger {
+            padding-top: 15px;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: flex;
+            background-color: #888;
+            width: 24px;
+            height: 2px;
+            margin: 6px auto;
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        } */
+    </style>
 </head>
 
 <body>
-    <header th:replace="~{fragments/header :: header}"></header>
 
-    <main></main>
+    <div class="container">
+        <div class="tabMenu">
+            <div class="header_manubar">
+                <nav role="navigation">
+                    <ul class="nav-menu">
+                        <img class="close_btn" src="/static/img/free-icon-x-button-458595.png" alt="">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">MapPage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">More</a>
+                        </li>
 
-    <footer th:replace="~{fragments/footer :: footer}"></footer>
+                    </ul>
 
-    <script>
-        const menu = document.querySelector(".header_hamburger");
-        const navMenu = document.querySelector(".nav-menu");
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="map" id="map"></div>
+        <!-- <div class="overlay">
+            <input class="mapSreach" type="text">
+        </div> -->
+    </div>
 
-        menu.addEventListener("click", () => {
-            menu.classList.toggle("active");
-            navMenu.classList.toggle("active");
-
-            let menuOpen = navMenu.classList.contains("active");
-            let newMenuOpenStatus = menuOpen;
-            menu.setAttribute("aria-expanded", newMenuOpenStatus);
-        });
-
-        // close menu
-        document.querySelectorAll(".nav-link").forEach((n) =>
-            n.addEventListener("click", () => {
-                menu.classList.remove("active");
-                navMenu.classList.remove("active");
-            }));
-    </script>
+    <!-- 자바 스크립트 api와 파일 -->
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eb2cde2cbeff757b6cdf78846ce372ed"></script>
+    <script src="/static/js/mapjs/map.js"></script>
 </body>
 
 </html>
