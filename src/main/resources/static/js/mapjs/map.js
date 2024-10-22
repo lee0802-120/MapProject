@@ -3,7 +3,7 @@ const menu = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const closeBtn = document.querySelector(".close_btn");
 const over = document.querySelector(".over");
-const sarchbtn = document.querySelector(".sarch_btn");
+const sarchBtn = document.querySelector(".sarch_btn");
 
 var options = {
     center: new kakao.maps.LatLng(36.47393942086304, 127.85943079338124),
@@ -100,7 +100,7 @@ closeBtn.addEventListener("click", () => {
     menu.setAttribute("aria-expanded", newMenuOpenStatus);
 });
 
-sarch_btn.addEventListener("click", () => {
+sarchBtn.addEventListener("click", () => {
   // 검색 버튼 추후 구현....
 })
 
