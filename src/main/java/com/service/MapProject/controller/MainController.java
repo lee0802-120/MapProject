@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Slf4j
 public class MainController {
 
-    @GetMapping("Map")
+    @GetMapping("/")
     public String MapPage(Model model) {
         model.addAttribute("title", "Map");
-        model.addAttribute("Name", "네임 : " + "asdfasdf" + " 굿");
         return "common/main";
     }
 }

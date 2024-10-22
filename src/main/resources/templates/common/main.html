@@ -2,53 +2,54 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title th:text="${title}"></title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.css"
-        integrity="sha512-72McA95q/YhjwmWFMGe8RI3aZIMCTJWPBbV8iQY3jy1z9+bi6+jHnERuNrDPo/WGYEzzNs4WdHNyyEr/yXJ9pA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poor+Story&display=swap"
+            rel="stylesheet">
     <link rel="stylesheet" href="/static/css/maincss/mainPage.css">
 </head>
 
 <body>
 
-    <div>
-        <div class="container">
-            <div class="tabMenu">
-                <div class="manubar">
-                    <nav role="navigation">
-                        <ul class="nav-menu">
-                            <i class="fa fa-times fa-2x close_btn" aria-hidden="true"></i>
-                            <li class="nav-item">
-                                <p><a href="" class="nav-link">Home</a></p>
-                            </li>
-                            <li class="nav-item">
-                                <p><a href="" class="nav-link">Login</a></p>
-                            </li>
-                            <li>
-                                <p th:text="${Name}"></p>
-                            </li>
+<div>
+    <li class="container">
+        <ul class="tabMenu">
+            <li>
+                <nav role="navigation">
+                    <div class="hamburger">
+                        <img src="/static/iconSvg/menu_28dp_5F6368.svg" alt="">
+                    </div>
 
-                        </ul>
-
-                        <div class="hamburger">
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                        </div>
-                    </nav>
+                    <ul class="nav-menu">
+                        <i class="fa fa-times fa-2x close_btn" aria-hidden="true"></i>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Login</a>
+                        </li>
+                    </ul>
+                </nav>
+            </li>
+            <li>
+                <div class="tabStar">
+                    <img class="starImg" src="/static/iconSvg/star_border_28dp_5F6368.svg" alt="">
                 </div>
-            </div>
-            <div class="map" id="map"></div>
-            <!-- <div class="overlay">
-            <input class="mapSreach" type="text">
-        </div> -->
+            </li>
+        </ul>
+        <div class="over"></div>
+        <div class="map" id="map"></div>
+        <div class="overlay">
+            <input class="mapSreach noto-sans-kr" type="text" placeholder="지역 검색">
+            <button class="sarch_btn"><img src="/static/iconSvg/search_20dp_5F6368.svg" alt=""></i></button>
         </div>
-    </div>
+</div>
+</div>
 
-    <!-- 자바 스크립트 api와 파일 -->
-    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eb2cde2cbeff757b6cdf78846ce372ed"></script>
-    <script src="/static/js/mapjs/map.js"></script>
+<!-- 자바 스크립트 api와 파일 -->
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eb2cde2cbeff757b6cdf78846ce372ed"></script>
+<script src="/static/js/mapjs/map.js"></script>
 </body>
 
 </html>
