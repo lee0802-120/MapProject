@@ -2,7 +2,6 @@
   <configuration default="false" name="MapProjectApplication" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com.service.MapProject.MapProjectApplication" />
     <module name="MapProject" />
-    <option name="VM_PARAMETERS" value="-Dspring.profiles.active=local" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
