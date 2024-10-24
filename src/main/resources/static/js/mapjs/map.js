@@ -7,7 +7,7 @@ const sarchBtn = document.querySelector(".sarch_btn");
 
 var options = {
   center: new kakao.maps.LatLng(36.47393942086304, 127.85943079338124),
-  level: 12,
+  level: 13,
 };
 
 var map = new kakao.maps.Map(container, options),
